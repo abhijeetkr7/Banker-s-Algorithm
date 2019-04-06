@@ -1,0 +1,21 @@
+printf("\nEnter the MAX matrix \n     ");
+	for (i=0;i<rz;i++) {
+		printf(" %c",(i+97));
+		avail[i]=ins[i]-avail[i];
+	}
+	printf("\n");
+	for (i=0;i <pno;i++) {
+		printf("P[%d]  ",i);
+		for (j=0;j<rz;j++)
+		 scanf("%d", &MAX[i][j]);
+	}
+	printf("\n");
+	A: d=-1;
+	for (i=0;i <pno;i++) {
+		count=0;
+		t=P[i];
+		for (j=0;j<rz;j++) {
+			need[t][j] = MAX[t][j]-allocated[t][j];
+			if(need[t][j]<=avail[j])
+			 count++;
+		}
